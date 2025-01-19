@@ -6,7 +6,7 @@ import Image from "next/image"
 
 
 const getData = async ()=>{
-    const fetchData= await client.fetch(`*[_type == "categories"]{
+    const fetchData= await client.fetch(`*[_type == "categories"] [0..3]{
   _id,title, "imageUrl": image.asset->url
 }`)
     return fetchData
