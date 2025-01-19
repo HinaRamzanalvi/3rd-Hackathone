@@ -3,11 +3,12 @@
 
 import { client } from "@/sanity/lib/client";
 import Image from "next/image";
+import Link from "next/link";
 
 import cartall from "@/components/public/cartall.svg";
 
 const getData = async () => {
-  const fetchData = await client.fetch(`  *[_type == "products"]{
+  const fetchData = await client.fetch(`*[_type == "products"]{
    _id,title,price,
    "imageUrl":image.asset->url
  }`);
@@ -24,16 +25,17 @@ interface sanitydata {
 const Productlist = async () => {
   const SanityData = await getData();
   console.log(SanityData);
-
+  
   return (
     <div>
       <h1 className=" mt-5 ml-6 text-6xl mb-3 font-extrabold font-serif">
         All products
       </h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:grid-cols-3">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:grid-cols-4">
   {SanityData.map((item: sanitydata, i: number) => {
     return (
       <div key={i} className="gap-6 border shadow-lg hover:scale-105">
+          <Link href={`/product/${item._id}`}>
         <Image
           className="rounded-t-lg h-[350px] w-full object-cover"
           src={item.imageUrl}
@@ -52,16 +54,13 @@ const Productlist = async () => {
             <Image src={cartall} alt="cart" className="w-11 h-11" />
           </div>
       
- 
+          
 
-                {/* Link to Single Product Page */}
-                {/* <Link href={`/product/${item._id}`}>
-                  <button className="w-[100px] h-[50px] bg-slate-600 hover:bg-gray-500 rounded-md text-white">
-                    View
-                  </button>
-                </Link> */}
+               
               </div>
+              </Link>
             </div>
+            
           );
         })}
       </div>

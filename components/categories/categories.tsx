@@ -1,12 +1,12 @@
 
-
+import Link from "next/link";
 
 import { client } from "@/sanity/lib/client"
 import Image from "next/image"
 
 
 const getData = async ()=>{
-    const fetchData= await client.fetch(`*[_type == "categories"] [0..3]{
+    const fetchData= await client.fetch(`*[_type == "categories"] {
   _id,title, "imageUrl": image.asset->url
 }`)
     return fetchData
@@ -15,6 +15,7 @@ const getData = async ()=>{
     interface catagories{
       title:string,
       imageUrl:string,
+      _id:number,
      
     }
 
@@ -33,6 +34,7 @@ const getData = async ()=>{
             return(
   
                  <div key={i} className="gap-6 border shadow-lg hover:scale-105 ">
+                   <Link href={`/categories/${item._id}`}>
               <Image 
                 className="rounded-t-lg h-[300px]"
                 src={item.imageUrl}
@@ -44,14 +46,11 @@ const getData = async ()=>{
                 <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                   {item.title}
                 </h5>
-                {/* <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                {item.description}
-                </p>
-                <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                {item.price}
-                </p> */}
+                
                 <button className="w-[100px] h-[50px] bg-black rounded-md text-white bg-opacity-50 ">buy now</button>
+                
               </div>
+              </Link>
               </div>
             
               

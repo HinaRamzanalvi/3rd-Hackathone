@@ -2,7 +2,7 @@
 
 
 import cartall from "@/components/public/cartall.svg";
-
+import Link from "next/link";
 import { client } from "@/sanity/lib/client"
 import Image from "next/image"
 
@@ -15,15 +15,16 @@ const getData = async ()=>{
     return fetchData
 
     };
-    interface catagories{
+    interface Featured{
       title:string,
       imageUrl:string,
       price:number,
+      _id:number,
      
     }
 
 
-    const Categories = async() => {
+    const Featured = async() => {
  
    const SanityData = await getData()
          console.log(SanityData)
@@ -32,11 +33,12 @@ const getData = async ()=>{
         <div>
           <h1 className="text-center text-4xl mt-20 mb-3 font-extrabold font-serif">Featured Products</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:grid-cols-4">
-        {SanityData.map((item:catagories,i:number)=>{
+        {SanityData.map((item:Featured,i:number)=>{
           
             return(
   
                  <div key={i} className="gap-6 border shadow-lg hover:scale-105 ">
+         
               <Image 
                 className="rounded-t-lg h-[250px]"
                 src={item.imageUrl}
@@ -52,16 +54,22 @@ const getData = async ()=>{
                 <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
                 ${item.price}
                 </p>
-
+                
+                <Link href={`/product/${item._id}`}>
            <p>
            <Image src={cartall} alt="cart" className="w-11 h-11" />
            </p>
-        
+           </Link>
       
       
+      
+      
+          
 
               </div>
+              
               </div>
+            
             
               
            
@@ -72,7 +80,7 @@ const getData = async ()=>{
       )
     }
     
-    export default Categories;
+    export default Featured;
 
 
 

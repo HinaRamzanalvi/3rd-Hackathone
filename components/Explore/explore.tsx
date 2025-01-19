@@ -24,6 +24,7 @@ export default function Explore() {
         <div className="w-full flex flex-col lg:flex-row lg:gap-6">
           {/* Left Section - Large Image */}
           <div className="w-full lg:w-[50%] h-auto flex justify-center items-center mb-6 lg:mb-0">
+            
             <Image
               src={chair3}
               alt="Chair"
@@ -36,6 +37,7 @@ export default function Explore() {
           {/* Right Section - Small Images */}
           <div className="w-full grid grid-cols-2 gap-4 sm:gap-6 lg:w-[50%]">
             <div className="w-full h-auto">
+              
               <Image
                 src={chair4}
                 alt="Chair 4"
@@ -45,6 +47,7 @@ export default function Explore() {
               />
             </div>
             <div className="w-full h-auto">
+           
               <Image
                 src={chair1}
                 alt="Chair 1"
@@ -70,6 +73,7 @@ export default function Explore() {
                 width={312}
                 height={312}
               />
+              
             </div>
           </div>
         </div>
