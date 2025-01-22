@@ -1,4 +1,6 @@
 
+
+
 import Link from "next/link";
 
 import { client } from "@/sanity/lib/client"
@@ -34,7 +36,8 @@ const getData = async ()=>{
             return(
   
                  <div key={i} className="gap-6 border shadow-lg hover:scale-105 ">
-                   <Link href={`/categories/${item._id}`}>
+                  
+                  <Link href={`/categories/${item._id}`}>
               <Image 
                 className="rounded-t-lg h-[300px]"
                 src={item.imageUrl}
@@ -46,6 +49,7 @@ const getData = async ()=>{
                 <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                   {item.title}
                 </h5>
+                
                 
                 <button className="w-[100px] h-[50px] bg-black rounded-md text-white bg-opacity-50 ">buy now</button>
                 

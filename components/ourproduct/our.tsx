@@ -44,6 +44,7 @@ export default function OurProduct() {
             className="relative bg-white shadow-md rounded-lg overflow-hidden transition-transform hover:scale-105"
           >
             {/* Badge/Icon */}
+            
             {product.icon && (
               <Image src={product.icon} alt="icon" className="absolute top-2 left-2 w-8 h-8" />
             )}

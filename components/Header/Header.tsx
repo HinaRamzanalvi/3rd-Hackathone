@@ -3,7 +3,7 @@
 
 
 
-
+import { ComboboxDemo } from "../combobox";
 import React from "react";
 import { TiTick } from "react-icons/ti";
 import Image from "next/image";
@@ -56,21 +56,61 @@ export default function Header() {
 </div>
 
       {/* Second Header */}
-      <div className="bg-[#F0F2F3]">
+      {/* <div className="bg-[#F0F2F3]">
         <div className="flex justify-between items-center max-w-screen-xl mx-auto py-4 px-4 lg:px-16">
           <div className="flex items-center gap-2">
+          
             <Image src={logo} alt="logo" />
             <p className="text-xl font-semibold">Comforty</p>
           </div>
+          
+         <div className="flex gap-4">
+          <ComboboxDemo/>
           <div className="flex items-center bg-white rounded-md px-3 py-2">
+         
             <AiOutlineShoppingCart className="text-xl" />
             <p className="font-bold ml-2"> <Link href="/Cart">Cart</Link></p>
             <div className="ml-2 w-6 h-6 flex items-center justify-center rounded-full bg-[#007580] text-white">
               2
             </div>
+            
+           </div>
           </div>
+        
+       
+      </div>
+      </div> */}
+
+
+<div className="bg-[#F0F2F3]">
+  <div className="flex flex-wrap items-center justify-between max-w-screen-xl mx-auto py-4 px-4 lg:px-16 gap-4">
+    {/* Logo Section */}
+    <div className="flex items-center gap-2 w-full md:w-auto">
+      <Image src={logo} alt="logo" />
+      <p className="text-xl font-semibold">Comforty</p>
+    </div>
+
+    {/* Search and Cart Section */}
+    <div className="flex flex-wrap items-center justify-between gap-4 w-full md:w-auto">
+      {/* Search Section */}
+      <div className="w-full md:w-auto">
+        <ComboboxDemo />
+      </div>
+
+      {/* Cart Section */}
+      <div className="flex items-center bg-white rounded-md px-3 py-2 w-full md:w-auto">
+        <AiOutlineShoppingCart className="text-xl" />
+        <p className="font-bold ml-2">
+          <Link href="/Cart">Cart</Link>
+        </p>
+        <div className="ml-2 w-6 h-6 flex items-center justify-center rounded-full bg-[#007580] text-white">
+          2
         </div>
       </div>
+    </div>
+  </div>
+</div>
+
 
       {/* Third Header */}
       <div className="bg-white border-b">
