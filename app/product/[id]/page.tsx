@@ -86,7 +86,7 @@ const SingleProduct = () => {
   };
 
   return (
-    <div className="bg-gradient-to-r from-blue-50 to-indigo-100 min-h-screen py-16">
+    <div className="bg-gradient-to-r from-blue-300 to-indigo-100 min-h-screen py-16">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         {!data ? (
           <div className="text-center">

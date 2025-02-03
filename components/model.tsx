@@ -118,7 +118,7 @@ const Modal: React.FC<ModalProps> = ({
         <button
           type="submit"
           onClick={handleOrderSubmit} // Use the new submit handler
-          className="bg-yellow-500 text-white py-3 px-6 rounded-lg w-full text-lg font-semibold transition-all"
+          className="bg-blue-400 text-white py-3 px-6 rounded-lg w-full text-lg font-semibold transition-all"
         >
           Place Order
         </button>

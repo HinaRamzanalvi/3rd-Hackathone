@@ -12,12 +12,17 @@ import vector from "@/components/public/Vector.svg";
 import logo from "@/components/public/logo.svg";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import Link from "next/link";
+import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
+
 
 export default function Header() {
   return (
     <div>
       {/* First Header */}
       <div className="bg-[#272343] text-white">
+      <SignedIn>
+            <UserButton />
+          </SignedIn>
   <div className="flex flex-wrap justify-between items-center max-w-screen-xl mx-auto py-2 px-4 lg:px-16">
     {/* Free Shipping */}
     <div className="flex items-center gap-2 opacity-70 w-full sm:w-auto">
@@ -35,7 +40,12 @@ export default function Header() {
       <div className="flex items-center gap-1">
         <Image src={alert} alt="alertcircle" width={20} height={20} />
         <p>Need Help</p>
+
       </div>
+      <SignedOut>
+              <SignInButton />
+            </SignedOut>
+      
     </div>
 
     {/* Mobile View (language, FAQ, Help - visible on small screens) */}

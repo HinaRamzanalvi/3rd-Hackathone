@@ -162,7 +162,7 @@ const ShipmentForm = () => {
         <div className="flex justify-center">
           <button
             type="submit"
-            className="bg-yellow-500 text-white py-3 px-6 rounded-md w-full text-lg font-semibold transition-all hover:bg-yellow-600"
+            className="bg-blue-300 text-white py-3 px-6 rounded-md w-full text-lg font-semibold transition-all hover:bg-blue-200"
           >
             Submit Shipping Information
           </button>

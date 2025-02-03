@@ -98,7 +98,7 @@ const Cart = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-indigo-100 to-blue-300 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gradient-to-r from-indigo-200 bg-slate-300 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <h1 className="text-4xl font-bold text-gray-800 mb-8 text-center">Your Shopping Cart</h1>
         {cart.length === 0 ? (
@@ -106,8 +106,8 @@ const Cart = () => {
             <div className="text-center text-xl text-gray-600">Your Cart Is Empty</div>
             <div className="flex justify-center w-full mt-8">
               <Link href={"/product"}>
-                <button className="bg-yellow-500 text-white font-semibold py-2 px-4 rounded-md">
-                  Continue Shopping
+                <button className="bg-gray-500 text-white font-semibold py-2 px-4 rounded-md">
+                  Continue 
                 </button>
               </Link>
             </div>
@@ -134,7 +134,8 @@ const Cart = () => {
                   </div>
                 </div>
                 <button
-                  onClick={() => handleRemoveFromCart(product.id)}
+                  onClick={() => handleRemoveFromCart(product.id )}
+                  
                   className="text-gray-500 hover:text-red-600"
                 >
                   <FaTrashAlt />
@@ -143,7 +144,7 @@ const Cart = () => {
             ))}
             <div className="flex justify-between items-center py-4 border-t">
               <div className="text-lg font-semibold">Total: ${getTotalPrice().toFixed(2)}</div>
-              <button onClick={() => setIsModalOpen(true)} className="bg-yellow-500 text-white py-2 px-4 rounded-md hover:bg-yellow-600">
+              <button onClick={() => setIsModalOpen(true)} className="bg-gray-400 text-white py-2 px-4 rounded-md hover:bg-yellow-600">
                 Checkout
               </button>
             </div>
