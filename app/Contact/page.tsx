@@ -2,7 +2,8 @@
 
 
 
-
+import Image from "next/image";
+import back from "@/components/public/back.png"
 import { IoLocation } from "react-icons/io5";
 import { FaPhoneAlt } from "react-icons/fa";
 import { FaClock } from "react-icons/fa";
@@ -12,7 +13,10 @@ import { MdSupportAgent } from "react-icons/md";
 
 export default function Contact() {
     return (
+        
+        
         <div className="px-4 md:px-8 lg:px-16">
+           
             <div className="max-w-7xl mx-auto mt-8">
                 {/* Heading */}
                 <div className="text-center mb-8">

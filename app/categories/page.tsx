@@ -18,6 +18,7 @@ const getData = async ()=>{
       title:string,
       imageUrl:string,
       _id:number,
+      
      
     }
 
