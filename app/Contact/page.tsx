@@ -2,8 +2,7 @@
 
 
 
-import Image from "next/image";
-import back from "@/components/public/back.png"
+
 import { IoLocation } from "react-icons/io5";
 import { FaPhoneAlt } from "react-icons/fa";
 import { FaClock } from "react-icons/fa";
